@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5 justify-content-center">
+    <header class="mb-5 text-center">
+        <h1>Mein cooler Blog</h1>
+        <p class="lead">Gedanken, Ideen und mehr.</p>
+    </header>
+    <div class="card card-body mb-5 shadow-sm align-content-center">
+        <button class="btn btn-primary" onclick="showNewPostModal()">Neuen Beitrag schreiben</button>
+    </div>
+    <div id="newPostModal" class="custom-alert-overlay justify-content-center align-content-center">
+        <div class="newPostModalBox">
+            <div class="newPostModalContent">
+                <form id="new-post-form">
+                    <div class="mb-3">
+                        <label for="newPostTitle" class="form-label">Titel:</label>
+                        <input type="text" id="newPostTitle" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="postContent" class="form-label">Inhalt:</label>
+                        <textarea id="postContent" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button id="newPostSend" type="submit" class="btn btn-primary">Veröffentlichen</button>
+                </form>
+                <button id="newPostCancel" class="btn btn-danger">Abbrechen</button>
+            </div>
+        </div>
+     </div>
+    <div id="fullPostModal" class="custom-alert-overlay justify-content-center align-content-center">
+        <div class="newPostModalBox">
+            <div class="newPostModalContent">
+                <h5 id="postTitle" class="card-title"></h5>
+                <p id="postText" class="card-text"></p>
+                <button id="fullPostClose" class="btn btn-danger">Schließen</button>
+            </div>
+        </div>
+     </div>
+
+    <main>
+        <div id="posts-container" class="row"></div>
+    </main>
+</div>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
