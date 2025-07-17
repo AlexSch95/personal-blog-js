@@ -4,7 +4,11 @@ const postsContainer = document.getElementById('posts-container');
 // Schritt 2: Deine Blog-Posts. Erfinde hier gleich 1-2 eigene Post-Ideen!
 let posts = [
     { id: 1, title: "Mein erster Beitrag", content: "Das ist der Inhalt meines ersten Beitrags. Hier steht viel Text, der später gekürzt wird, damit er in die Vorschau passt." },
-    { id: 2, title: "Warum Programmieren Spaß macht", content: "Programmieren ist wie Rätsel lösen. Man hat ein Problem und sucht nach einer kreativen Lösung. Das Gefühl, wenn der Code endlich funktioniert, ist unbezahlbar." }
+    { id: 2, title: "Warum Programmieren Spaß macht", content: "Programmieren ist wie Rätsel lösen. Man hat ein Problem und sucht nach einer kreativen Lösung. Das Gefühl, wenn der Code endlich funktioniert, ist unbezahlbar." },
+    { id: 3, title: "Testpost1", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem cum error esse assumenda minima dolorum quam quia distinctio optio, dolores omnis! Dolor, nostrum ducimus atque sint blanditiis eligendi repellat."},
+    { id: 4, title: "Testpost2", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem cum error esse assumenda minima dolorum quam quia distinctio optio, dolores omnis! Dolor, nostrum ducimus atque sint blanditiis eligendi repellat."},
+    { id: 5, title: "Testpost3", content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorem cum error esse assumenda minima dolorum quam quia distinctio optio, dolores omnis! Dolor, nostrum ducimus atque sint blanditiis eligendi repellat."}
+
 ];
 
 // Schritt 3: Funktion, die alle Posts als Karten darstellt.
@@ -30,17 +34,17 @@ function showNewPostModal() {
     const fullModal = document.getElementById('newPostModal');
     const cancelButton = document.getElementById("newPostCancel");
     const sendButton = document.getElementById("newPostSend");
-    let newPostTitle = document.getElementById("newPostTitle").value;
-    let newPostContent = document.getElementById("postContent").value;
-    newPostTitle = "";
-    newPostContent = "";
+    let newPostTitle = document.getElementById("newPostTitle");
+    let newPostContent = document.getElementById("postContent");
+    newPostTitle.value = "";
+    newPostContent.value = "";
     fullModal.style.display = 'flex';
     cancelButton.onclick = function() {
         fullModal.style.display = 'none';
     }
     sendButton.onclick = function() {
         fullModal.style.display = 'none';
-        addPost(newPostTitle, newPostContent);
+        addPost(newPostTitle.value, newPostContent.value);
     }
 
 }
